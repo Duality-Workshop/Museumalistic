@@ -55,9 +55,8 @@ public class ButtonInteraction : MonoBehaviour
 		{
 			m_spriteRenderer.sprite = buttonDown;
 			m_buttonUp = false;
+			OnPushButton?.Invoke(buttonColor);
 		}
-
-		OnPushButton?.Invoke(buttonColor);
 	}
 
 	private void resetButton()
