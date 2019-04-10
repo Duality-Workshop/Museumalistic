@@ -20,6 +20,7 @@ public class ButtonInteraction : MonoBehaviour
 
 	private bool m_buttonUp;
 	private SpriteRenderer m_spriteRenderer;
+	private AudioSource m_sound;
 
 	private void Awake()
 	{
@@ -39,6 +40,8 @@ public class ButtonInteraction : MonoBehaviour
 			break;
 		}
 
+		m_sound = GetComponent<AudioSource>();
+
 		ConsoleBehaviour.OnResetButton += resetButton;
 	}
 
@@ -55,6 +58,7 @@ public class ButtonInteraction : MonoBehaviour
 		{
 			m_spriteRenderer.sprite = buttonDown;
 			m_buttonUp = false;
+			m_sound.Play();
 			OnPushButton?.Invoke(buttonColor);
 		}
 	}

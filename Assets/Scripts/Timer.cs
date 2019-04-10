@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour
 {
 	public delegate void TimerDoneAction();
 	public static event TimerDoneAction OnTimerDone;
+	public event TimerDoneAction OnTimerDoneLocal;
 
 	public float seconds = 300;
 
@@ -29,6 +30,7 @@ public class Timer : MonoBehaviour
 			{
 				m_done = true;
 				OnTimerDone?.Invoke();
+				OnTimerDoneLocal?.Invoke();
 			}
 		}
     }
