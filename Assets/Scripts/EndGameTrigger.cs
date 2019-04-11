@@ -21,7 +21,7 @@ public class EndGameTrigger : MonoBehaviour
 	private void Awake()
 	{
 		m_canClose = false;
-		Timer.OnTimerDone += OnTimerDone;
+		timer.OnTimerDoneLocal += OnTimerDone;
 		endTimer.OnTimerDoneLocal += OnEndTimerDone;
 	}
 
@@ -73,7 +73,7 @@ public class EndGameTrigger : MonoBehaviour
 #if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
 #elif UNITY_WEBGL
-		SceneManager.LoadScene(0, LoadSceneMode.Single);
+		SceneManager.LoadScene(2, LoadSceneMode.Single);
 #else
 		Application.Quit();
 #endif
