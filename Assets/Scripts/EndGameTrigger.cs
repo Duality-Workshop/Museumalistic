@@ -72,8 +72,8 @@ public class EndGameTrigger : MonoBehaviour
 	{
 #if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_WEBPLAYER
-		SceneManager.LoadScene("0", LoadSceneMode.Single);
+#elif UNITY_WEBGL
+		SceneManager.LoadScene(0, LoadSceneMode.Single);
 #else
 		Application.Quit();
 #endif
